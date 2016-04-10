@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bubble Chart - vallandingham.me</title>
+  <meta name="description" content="Example Bubble chart implementation in JS. Based on NYT visualization">
+  <meta name="author" content="Jim Vallandingham">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bubble_chart.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gates Foundation Educational Spending</h1>
+    <div id="toolbar">
+      <a href="#" id="all" class="button active">All Grants</a>
+      <a href="#" id="year" class="button">Grants By Year</a>
+    </div>
+    <div id="vis"></div>
+
+    <div class="footer">
+      <p>A demonstration of animated bubble charts in D3.js</p>
+      <p><a href="http://vallandingham.me/bubble_charts_in_d3.html">Blog Post</a> | <a href="https://github.com/vlandham/gates_bubbles">Code</a> | <a href="http://www.washingtonpost.com/wp-srv/metro/data/gates-grants.html">Data</a></p>
+    </div>
+  </div>
+
+  <script src="lib/d3.js"></script>
+  <script src="src/tooltip.js"></script>
+  <script src="src/bubble_chart.js"></script>
+
+
+</body>
+</html>
