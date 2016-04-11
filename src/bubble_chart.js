@@ -167,7 +167,7 @@ function bubbleChart() {
       .attr('r', function (d) { return d.radius; });
 
     // Set initial layout to single group.
-    groupNodes();
+    groupBubbles();
   };
 
   /*
@@ -176,7 +176,7 @@ function bubbleChart() {
    * tick function is set to move all nodes to the
    * center of the visualization.
    */
-  function groupNodes() {
+  function groupBubbles() {
     hideYears();
 
     force.on('tick', function (e) {
@@ -215,7 +215,7 @@ function bubbleChart() {
    * tick function is set to move nodes to the
    * yearCenter of their data's year.
    */
-  function splitNodes() {
+  function splitBubbles() {
     showYears();
 
     force.on('tick', function (e) {
@@ -315,9 +315,9 @@ function bubbleChart() {
    */
   chart.toggleDisplay = function (displayName) {
     if (displayName === 'year') {
-      splitNodes();
+      splitBubbles();
     } else {
-      groupNodes();
+      groupBubbles();
     }
   };
 
