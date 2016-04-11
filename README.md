@@ -14,7 +14,7 @@ It goes along with a remake of the tutorial here:
 
 A live version of this code is here:
 
-[http://vallandingham.me/bubble_chart/](http://vallandingham.me/buble_chart/)
+[http://vallandingham.me/bubble_chart/](http://vallandingham.me/bubble_chart/)
 
 ## Running
 
