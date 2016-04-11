@@ -34,7 +34,7 @@ a, a:visited, a:active {
   margin-top: 10px;
 }
 
-.years {
+.year {
   font-size: 21px;
   fill: #aaa;
   cursor: default;
@@ -47,10 +47,8 @@ a, a:visited, a:active {
   -moz-border-radius:5px;
 	border-radius: 5px;
   border: 2px solid #000;
-	/* background: #222222; */
   background: #fff;
 	opacity: .9;
-	/* color: #eeeeee; */
   color: black;
 	padding: 10px;
 	width: 300px;

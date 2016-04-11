@@ -1,35 +1,57 @@
+/*
+ * Creates tooltip with provided id that
+ * floats on top of visualization.
+ * Most styling is expected to come from CSS
+ * so check out bubble_chart.css for more details.
+ */
 function floatingTooltip(tooltipId, width) {
-  var t = d3.select('body')
+  // Local variable to hold tooltip div for
+  // manipulation in other functions.
+  var tt = d3.select('body')
     .append('div')
     .attr('class', 'tooltip')
     .attr('id', tooltipId)
     .style('pointer-events', 'none');
 
+  // Set a width if it is provided.
   if (width) {
-    t.style('width', width);
+    tt.style('width', width);
   }
 
+  // Initially it is hidden.
   hideTooltip();
 
+  /*
+   * Display tooltip with provided content.
+   *
+   * content is expected to be HTML string.
+   *
+   * event is d3.event for positioning.
+   */
   function showTooltip(content, event) {
-    d3.select('#' + tooltipId)
-      .style('opacity', 1.0)
+    tt.style('opacity', 1.0)
       .html(content);
 
     updatePosition(event);
   }
 
+  /*
+   * Hide the tooltip div.
+   */
   function hideTooltip() {
-    d3.select('#' + tooltipId)
-      .style('opacity', 0.0);
+    tt.style('opacity', 0.0);
   }
 
+  /*
+   * Figure out where to place the tooltip
+   * based on d3 mouse event.
+   */
   function updatePosition(event) {
     var xOffset = 20;
     var yOffset = 10;
 
-    var ttw = t.style('width');
-    var tth = t.style('height');
+    var ttw = tt.style('width');
+    var tth = tt.style('height');
 
     var wscrY = window.scrollY;
     var wscrX = window.scrollX;
@@ -50,8 +72,7 @@ function floatingTooltip(tooltipId, width) {
       tttop = curY + yOffset;
     }
 
-    // $(ttid).css('top', tttop + 'px').css('left', ttleft + 'px');
-    t.style({ top: tttop + 'px', left: ttleft + 'px' });
+    tt.style({ top: tttop + 'px', left: ttleft + 'px' });
   }
 
   return {
